@@ -5,3 +5,10 @@ export const getHealth = (req, res) => {
     uptime: process.uptime(),
   });
 };
+
+export const getHealthById = (req, res) => {
+  res.json({
+    status: "ok",
+    id: req.params.id
+  });
+};
