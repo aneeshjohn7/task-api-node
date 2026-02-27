@@ -1,5 +1,10 @@
 export const requestLogger = (req, res, next) => {
-  const { method, url } = req;
-  console.log(`[${new Date().toISOString()}] ${method} ${url}`);
-  next(); // continue to next middleware
+  const requestId = Math.random().toString(36).substring(2, 10);
+
+  console.log(`[${new Date().toISOString()}] 
+  ID:${requestId} 
+  ${req.method} 
+  ${req.url}`);
+
+  next();
 };
